@@ -9,9 +9,9 @@
 import java.util.Scanner;
 
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner s = new Scanner(System.in);
-		
+
 		int quantContas = 0;
 		
 		while(quantContas <= 0){

@@ -1,3 +1,4 @@
+package Exercicios;
 // Exercício 1. Sabendo disto, altere os métodos abaixo para que uma exceção do tipo IllegalArgumentException seja lançada e tratada quando o valor for inválido. IllegalArgumentException é uma Runtime Exception do Java e indica que o método "não gostou" do que foi passado.
 
 // public void aumentaTemperatura(double tempMais){
