@@ -19,6 +19,12 @@ public abstract class Produto {
     private String descricao;
     private double preco;
 
+    public Produto(double preco, String descricao, String nome) {
+        this.preco = preco;
+        this.descricao = descricao;
+        this.nome = nome;
+    }
+
     public String getNome() {
         return nome;
     }
