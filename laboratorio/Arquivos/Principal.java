@@ -11,7 +11,6 @@
 // b) o eletrodoméstico mais barato
 
 // c) o nome e a quantidade em estoque de todos os produtos de vestuário 
-
 package Arquivos;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,9 +20,7 @@ public class Principal {
     
     public static void main(String[] args) {
         Estoque e = new Estoque("arquivoProdutos.txt");
-
 		String gravaArquivo = "";
-		
 		Produto[] produtos = e.getProdutos();
 		
 		gravaArquivo += "Informações do alimento mais caro:\n";

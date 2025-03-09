@@ -1,0 +1,14 @@
+Informações do alimento mais caro:
+Arquivos.Alimento@2c1156a7
+
+Informações do eletrodoméstico mais barato:
+Arquivos.Eletrodomestico@77258e59
+
+Nome e quantidade em estoque de todos os produtos de vestuário:
+Camiseta | Quantidade em estoque: 10
+Calca | Quantidade em estoque: 5
+Bermuda | Quantidade em estoque: 16
+Casaco | Quantidade em estoque: 8
+Moleton | Quantidade em estoque: 36
+Gravata | Quantidade em estoque: 78
+Camiseta | Quantidade em estoque: 4
