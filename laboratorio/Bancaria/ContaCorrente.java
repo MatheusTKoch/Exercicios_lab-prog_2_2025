@@ -1,11 +1,16 @@
 package Bancaria;
-import java.util.Scanner;
 
 public class ContaCorrente extends ContaBancaria {
     private int qtdTransacoes;
 
-    public ContaCorrente(String senha) {
+    public ContaCorrente(String senha, int qtdTransacoes) {
         super(senha);
+        this.qtdTransacoes = qtdTransacoes;
+    }
+
+    public ContaCorrente(String senha, int numero, double saldo, int qtdTransacoes) {
+        super(senha, numero, saldo);
+        this.qtdTransacoes = qtdTransacoes;
     }
 
     public void setQtdTransacoes(int qtdTransacoes) {

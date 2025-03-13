@@ -3,8 +3,14 @@ package Bancaria;
 public class ContaPoupanca extends ContaBancaria {
     private double taxaRendimento;
 
-    public ContaPoupanca(String senha) {
+    public ContaPoupanca(String senha, double taxaRendimento) {
         super(senha);
+        this.taxaRendimento = taxaRendimento;
+    }
+
+    public ContaPoupanca(String senha, int numero, double saldo, double taxaRendimento) {
+        super(senha, numero, saldo);
+        this.taxaRendimento = taxaRendimento;
     }
 
     public void setTaxaRendimento(double taxaRendimento) {

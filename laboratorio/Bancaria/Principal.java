@@ -25,15 +25,50 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
-
 		int quantContas = 0;
+		ContaBancaria[] contas = new ContaBancaria[quantContas];
 		
 		while(quantContas <= 0){
 			System.out.println("Quantas contas serão criadas?");
 			quantContas = Integer.parseInt(s.nextLine());
+
+			if(quantContas <= 0){
+				System.out.println("Quantidade inválida. Digite um número maior que zero.");
+			} else {
+				for (int i = 0; i < quantContas; i++) {
+					System.out.println("A conta sera corrente ou poupanca? Digite 1 para corrente e 2 para poupanca");
+					int tipoConta = Integer.parseInt(s.nextLine());
+					if(tipoConta == 1){
+						System.out.println("Digite a senha da conta corrente:");
+						String senha = s.nextLine();
+						System.out.println("Digite o número da conta corrente:");
+						int numero = Integer.parseInt(s.nextLine());
+						System.out.println("Digite o saldo da conta corrente:");
+						double saldo = Double.parseDouble(s.nextLine());
+						System.out.println("Digite a quantidade de transações da conta corrente:");
+						int qtdTransacoes = Integer.parseInt(s.nextLine());
+						contas[i] = new ContaCorrente(senha, numero, saldo, qtdTransacoes);
+					} else if(tipoConta == 2){
+						System.out.println("Digite a senha da conta poupanca:");
+						String senha = s.nextLine();
+						System.out.println("Digite o número da conta poupanca:");
+						int numero = Integer.parseInt(s.nextLine());
+						System.out.println("Digite o saldo da conta poupanca:");
+						double saldo = Double.parseDouble(s.nextLine());
+						System.out.println("Digite a taxa de rendimento da conta poupanca:");
+						double taxaRendimento = Double.parseDouble(s.nextLine());
+						contas[i] = new ContaPoupanca(senha, numero, saldo, taxaRendimento);
+					} else {
+						System.out.println("Tipo de conta inválido. Digite 1 para corrente e 2 para poupanca");
+						i--;
+					}
+
+				}
+			}
+
+
 		}
 		
-		ContaBancaria[] contas = new ContaBancaria[quantContas];
 
         
     }

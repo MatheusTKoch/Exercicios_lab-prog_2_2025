@@ -53,7 +53,7 @@ public abstract class ContaBancaria {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Digite a senha anterior:");
 		if(s.nextLine().equals(this.senha)){
-			this.senha = senha;
+			setSenha(s.nextLine());
 			return true;
 		}
 		return false;
