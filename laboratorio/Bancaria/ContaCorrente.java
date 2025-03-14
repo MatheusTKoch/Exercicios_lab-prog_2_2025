@@ -1,40 +1,43 @@
 package Bancaria;
 
 public class ContaCorrente extends ContaBancaria {
-    private int qtdTransacoes;
+    private int quantTransacoes;
+	
+	public ContaCorrente(String senha) {
+		super(senha);
+	}
 
-    public ContaCorrente(String senha, int qtdTransacoes) {
-        super(senha);
-        this.qtdTransacoes = qtdTransacoes;
-    }
+	@Override
+	public void saca(double valor) {
+		setSaldo(getSaldo() - valor);
+		quantTransacoes++;
+	}
 
-    public ContaCorrente(String senha, int numero, double saldo, int qtdTransacoes) {
-        super(senha, numero, saldo);
-        this.qtdTransacoes = qtdTransacoes;
-    }
+	@Override
+	public void deposita(double valor) {
+		setSaldo(getSaldo() + valor);
+		quantTransacoes++;
+	}
 
-    public void setQtdTransacoes(int qtdTransacoes) {
-        this.qtdTransacoes = qtdTransacoes;
-    }
+	@Override
+	public void tiraExtrato() {
+		System.out.println(this.toString());
+		quantTransacoes++;
+	}
 
-    public int getQtdTransacoes() {
-        return qtdTransacoes;
-    }
+	public int getQuantTransacoes() {
+		return quantTransacoes;
+	}
 
-    @Override
-    public void saca(double valor) {
-        System.out.println("Sacando " + valor + " da conta corrente");
-    }
+	public void setQuantTransacoes(int quantTransacoes) {
+		this.quantTransacoes = quantTransacoes;
+	}
 
-    @Override
-    public void deposita(double valor) {
-        System.out.println("Depositando " + valor + " na conta corrente");
-    }
-
-    @Override
-    public void tiraExtrato() {
-        System.out.println("Extrato da conta corrente");
-    }
+	@Override
+	public String toString() {
+		return "ContaCorrente [quantTransacoes=" + quantTransacoes
+				+ ", toString()=" + super.toString() + "]";
+	}
 
     
 }
