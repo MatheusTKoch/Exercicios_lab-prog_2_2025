@@ -40,6 +40,28 @@ public class Principal {
 			contas[i] = Integer.parseInt(s.nextLine()) == 1 ? new ContaCorrente("123456") : new ContaPoupanca("123456");
 		}
 
-        
+        for(ContaBancaria cb: contas){
+			cb.setNumero((int)(Math.random()*10000+1));
+		}
+			
+		for(ContaBancaria cb: contas){
+			if(cb instanceof ContaPoupanca){
+				((ContaPoupanca) cb).setTaxaRendimento(Math.random());
+			}
+		}
+
+		for(ContaBancaria cb: contas){
+			cb.deposita(Math.random()*500);
+			cb.saca(Math.random()*100);
+			cb.tiraExtrato();
+		}
+
+		for(ContaBancaria cb: contas) {
+			if(cb instanceof ContaPoupanca)
+				System.out.println("Taxa de rendimento da poupança "+cb.getNumero()+": "+((ContaPoupanca) cb).getTaxaRendimento());
+			else if(cb instanceof ContaCorrente)
+				System.out.println("Quantidade de transações da conta corrente "+cb.getNumero()+": "+((ContaCorrente)cb).getQuantTransacoes());
+		}
+			
     }
 }
