@@ -1,6 +1,6 @@
 package Bancaria;
 
-public class ContaPoupanca extends ContaBancaria {
+public class ContaPoupanca extends ContaBancaria implements Rentavel{
     private double taxaRendimento;
 	
 	public ContaPoupanca(String senha) {
@@ -34,6 +34,11 @@ public class ContaPoupanca extends ContaBancaria {
 
 	public void setTaxaRendimento(double taxaRendimento) {
 		this.taxaRendimento = taxaRendimento;
+	}
+
+	@Override
+	public double calculaRendimento() {
+		return super.getSaldo() * this.taxaRendimento;
 	}
         
 }

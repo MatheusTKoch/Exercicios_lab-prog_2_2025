@@ -25,7 +25,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
-
+		Rentavel contaRentavel = new ContaPoupanca("123456");
 		int quantContas = 0;
 		
 		while(quantContas <= 0){
@@ -62,6 +62,12 @@ public class Principal {
 			else if(cb instanceof ContaCorrente)
 				System.out.println("Quantidade de transações da conta corrente "+cb.getNumero()+": "+((ContaCorrente)cb).getQuantTransacoes());
 		}
+		
+		Rentavel[] rentaveis = new Rentavel[(int)(Math.random()*10+1)];
+		for(int i=0; i<rentaveis.length; i++)
+			rentaveis[i] = Math.random() < 0.5 ? new ContaPoupanca("123456") : new TesouroDireto(200, 300);
 			
+		for(Rentavel r: rentaveis)
+			System.out.println("Rendimento: R$" + r.calculaRendimento());
     }
 }
