@@ -1,8 +1,8 @@
 package Recursao;
 
-public class Array {
-
-    public static void imprimeArray(int[] array) {
+public class ArrayInvertido {
+    public static void imprimeArray(int[] array) throws IllegalArgumentException {
+        if (array == null) throw new IllegalArgumentException();
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
