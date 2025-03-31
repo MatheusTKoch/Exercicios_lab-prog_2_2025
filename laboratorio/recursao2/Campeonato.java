@@ -1,21 +1,10 @@
-//Crie uma classe Campeonato, que possui um array de TimeCampeonato. Crie o construtor e métodos de acesso do atributo. No construtor, não inicialize o array, pois ainda não sabemos o tamanho dele.
-
-// Na classe Campeonato, crie um método chamado leArquivo, que recebe uma String filename. Este método lê um arquivo chamado filename e popula o array de TimeCampeonato de acordo com o conteúdo do arquivo. O conteúdo do arquivo está no seguinte formato (assuma que o nome do time NÃO terá espaços):
-
-// Grêmio 5 x 0 Internacional
-// Santos 2 x 3 Cruzeiro
-// PSG 1 x 4 Grêmio
-// Barcelona 2 x 3 RealMadrid
-
-
 package recursao2;
 
 public class Campeonato {
     private TimeCampeonato[] times;
-    private String fileString;
 
     public Campeonato() {
-
+        // Variavel nao inicializada
     }
 
     public void setTimeCampeonato(TimeCampeonato[] times) {
@@ -26,7 +15,75 @@ public class Campeonato {
         return times;
     }
 
-    public void leArquivo(String fileString) {
+    public void leArquivo(String fileName) {
+        try {
+            String path = System.getProperty("user.dir") + "\\laboratorio\\recursao2\\" + fileName;
+            java.nio.file.Path filePath = java.nio.file.Paths.get(path);
+            java.util.List<String> lines = java.nio.file.Files.readAllLines(filePath);
+            
+            //Criar array
+            java.util.Set<String> uniqueTeams = new java.util.HashSet<>();
+            
+            // Processar nomes de equipe
+            for (String line : lines) {
+                String[] parts = line.split(" x ");
+                String[] team1Parts = parts[0].trim().split(" ");
+                String[] team2Parts = parts[1].trim().split(" ");
+                
+                uniqueTeams.add(team1Parts[0]);
+                uniqueTeams.add(team2Parts[1]);
+            }
+            
+            times = new TimeCampeonato[uniqueTeams.size()];
+            java.util.Map<String, TimeCampeonato> teamMap = new java.util.HashMap<>();
+            
+            int index = 0;
+            for (String teamName : uniqueTeams) {
+                times[index] = new TimeCampeonato(teamName, 0); // Initialize with 0 saldo
+                teamMap.put(teamName, times[index]);
+                index++;
+            }
+            
+            // Calculo do saldo
+            for (String line : lines) {
+                String[] parts = line.split(" x ");
+                String[] team1Parts = parts[0].trim().split(" ");
+                String[] team2Parts = parts[1].trim().split(" ");
+                
+                String team1Name = team1Parts[0];
+                String team2Name = team2Parts[1];
+                int team1Score = Integer.parseInt(team1Parts[1]);
+                int team2Score = Integer.parseInt(team2Parts[0]);
+                
+                TimeCampeonato team1 = teamMap.get(team1Name);
+                TimeCampeonato team2 = teamMap.get(team2Name);
+                
+                // Update saldo de gols
+                team1.setSaldo(team1.getSaldo() + (team1Score - team2Score));
+                team2.setSaldo(team2.getSaldo() + (team2Score - team1Score));
+            }
+            
+        } catch (java.io.IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+        }
+    }
+
+    public TimeCampeonato timeMaiorSaldoGols() {
+        if (times == null || times.length == 0) {
+            return null;
+        }
+        return timeMaiorSaldoGols(times, 0, times[0]);
+    }
+
+    private TimeCampeonato timeMaiorSaldoGols(TimeCampeonato[] times, int index, TimeCampeonato maiorTime) {
+        if (index >= times.length) {
+            return maiorTime;
+        }
         
+        if (times[index].getSaldo() > maiorTime.getSaldo()) {
+            maiorTime = times[index];
+        }
+        
+        return timeMaiorSaldoGols(times, index + 1, maiorTime);
     }
 }
