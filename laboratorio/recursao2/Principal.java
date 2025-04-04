@@ -6,7 +6,8 @@ public class Principal {
         Campeonato campeonato = new Campeonato();
         
         // Ler o arquivo times.txt
-        campeonato.leArquivo("times.txt");
+        String caminhoCompleto = "times.txt";
+        campeonato.leArquivo(caminhoCompleto);
         
         // Encontrar o time com maior saldo de gols
         TimeCampeonato timeMaiorSaldo = campeonato.timeMaiorSaldoGols();

@@ -18,6 +18,7 @@ public class Campeonato {
     public void leArquivo(String fileName) {
         try {
             String path = System.getProperty("user.dir") + "\\laboratorio\\recursao2\\" + fileName;
+            System.out.println("Tentando ler arquivo em: " + path);
             java.nio.file.Path filePath = java.nio.file.Paths.get(path);
             java.util.List<String> lines = java.nio.file.Files.readAllLines(filePath);
             
@@ -39,7 +40,7 @@ public class Campeonato {
             
             int index = 0;
             for (String teamName : uniqueTeams) {
-                times[index] = new TimeCampeonato(teamName, 0); // Initialize with 0 saldo
+                times[index] = new TimeCampeonato(teamName, 0);
                 teamMap.put(teamName, times[index]);
                 index++;
             }
@@ -65,6 +66,7 @@ public class Campeonato {
             
         } catch (java.io.IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
