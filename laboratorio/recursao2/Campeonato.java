@@ -17,9 +17,13 @@ public class Campeonato {
 
     public void leArquivo(String fileName) {
         try {
-            String path = System.getProperty("user.dir") + "\\laboratorio\\recursao2\\" + fileName;
-            System.out.println("Tentando ler arquivo em: " + path);
-            java.nio.file.Path filePath = java.nio.file.Paths.get(path);
+            // Using Path.of for better path handling
+            java.nio.file.Path currentPath = java.nio.file.Path.of("").toAbsolutePath();
+            java.nio.file.Path filePath = currentPath.resolve("laboratorio")
+                                                    .resolve("recursao2")
+                                                    .resolve(fileName);
+            
+            System.out.println("Tentando ler arquivo em: " + filePath);
             java.util.List<String> lines = java.nio.file.Files.readAllLines(filePath);
             
             //Criar array
