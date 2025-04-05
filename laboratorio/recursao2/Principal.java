@@ -1,19 +1,15 @@
 package recursao2;
 
 public class Principal {
-    public static int metodo(int n) throws IllegalArgumentException{
-        if(n <= 0) throw new IllegalArgumentException();
-        System.out.println(metodo_recursivo(n));
-        return metodo_recursivo(n);
-    }
-
-    private static int metodo_recursivo(int n) {
-        if(n == 1) return 2;
-        return 3 * metodo_recursivo(n-1) + 1;
-    }
+    public static void metodoRecursivo(int x) {
+        if (x == 0)
+            System.out.println("Fim do programa");
+        else
+            metodoRecursivo(x-3);
+        System.out.println(x);
+   }
     public static void main(String[] args) {
-        metodo(2);
-        metodo(3);
+        metodoRecursivo(6);
         // // Criar uma instância do campeonato
         // Campeonato campeonato = new Campeonato();
         
