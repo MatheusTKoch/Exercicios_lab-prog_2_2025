@@ -8,8 +8,18 @@ public class Principal {
             metodoRecursivo(x-3);
         System.out.println(x);
    }
+
+   public static int pesquisaSequencialOrdenada(int[] tab, int arg) {
+        for (int i = 0; (i < tab.length) && (tab[i] <= arg); i++) {
+            if (tab[i] == arg)
+                System.out.println(i); 
+                return i;
+        }
+        return -1;
+   }
     public static void main(String[] args) {
-        metodoRecursivo(6);
+        int[] array = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
+        pesquisaSequencialOrdenada(array, 17);
         // // Criar uma instância do campeonato
         // Campeonato campeonato = new Campeonato();
         
