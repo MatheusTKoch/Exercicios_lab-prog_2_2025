@@ -11,8 +11,16 @@ public class Exercises {
         return num * fatorialInt(num - 1);
     }
 
+    //Write a Java recursive method to calculate the sum of all numbers from 1 to n.
+    public static int somaNum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        return n + somaNum(n - 1);
+    }
     public static void main(String[] args) {
-        int resultado = fatorialInt(4);
-        System.out.println(resultado);
+        int somaNum = somaNum(4);
+        System.out.println(somaNum);
     }
 }
