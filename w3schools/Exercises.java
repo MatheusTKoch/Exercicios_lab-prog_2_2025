@@ -19,8 +19,17 @@ public class Exercises {
 
         return n + somaNum(n - 1);
     }
+
+    //Write a Java recursive method to find the length of a given string.
+    public static int tamString(String str) {
+        if (str.isEmpty()) {
+            return 0;
+        }
+        
+        return 1 + tamString(str.substring(1));
+    }
     public static void main(String[] args) {
-        int somaNum = somaNum(4);
-        System.out.println(somaNum);
+        int tamStr = tamString("teste");
+        System.out.println(tamStr);
     }
 }
