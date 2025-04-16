@@ -30,7 +30,7 @@ public class Pesquisa {
         return pesqSeqOrd(vetor, num, i + 1);
     }
     public static void main(String[] nums) {
-        int[] vet = { 1, 2, 4, 5, 12, 23, 43};
+        int[] vet = { 1, 2, 4, 5, 23, 12, 43};
         System.out.println(pesqSeqOrd(vet, 43));
     }
 
