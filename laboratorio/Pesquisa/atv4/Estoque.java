@@ -36,4 +36,24 @@ public class Estoque {
         }
         return arrayProduto;
     }
+
+    // Na classe Estoque, crie um método chamado produtosNaoPereciveis, que retorna um array de objetos da classe Perecivel, contendo todos os produtos perecíveis que estão no array de produtos.
+    public Perecivel[] produtosNaoPereciveis() {
+        int count = 0;
+        for (Produto produto : arrayProduto) {
+            if (produto instanceof Perecivel) {
+                count++;
+            }
+        }
+        
+        Perecivel[] pereciveis = new Perecivel[count];
+        int index = 0;
+        for (Produto produto : arrayProduto) {
+            if (produto instanceof Perecivel) {
+                pereciveis[index++] = (Perecivel) produto;
+            }
+        }
+        
+        return pereciveis;
+    }
 }

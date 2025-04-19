@@ -1,4 +1,3 @@
-// Na classe Estoque, crie um método chamado produtosNaoPereciveis, que retorna um array de objetos da classe Perecivel, contendo todos os produtos perecíveis que estão no array de produtos.
 // Na classe Estoque, crie um método chamado ordenaProdutosPereciveisPorQuantidade, que recebe um array de objetos da classe Perecivel e ordena os produtos deste array em ordem decrescente de quantidade em estoque, utilizando Seleção Direta.
 // Crie uma classe chamada Principal, que possui o main. No main, faça o código para testar os métodos e classes criados anteriormente.
 
