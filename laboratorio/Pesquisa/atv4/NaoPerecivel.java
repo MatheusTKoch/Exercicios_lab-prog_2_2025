@@ -13,7 +13,7 @@ public class NaoPerecivel extends Produto {
         return quantEstoque;
     }
 
-    public void setEstoque() {
+    public void setEstoque(int quantEstoque) {
         this.quantEstoque = quantEstoque;
     }
 

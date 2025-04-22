@@ -55,5 +55,22 @@ public class Estoque {
         }
         
         return pereciveis;
+    } 
+
+    // Na classe Estoque, crie um método chamado ordenaProdutosPereciveisPorQuantidade, que recebe um array de objetos da classe Perecivel e ordena os produtos deste array em ordem decrescente de quantidade em estoque, utilizando Seleção Direta.
+    public Perecivel[] ordenaProdutosPereciveisPorQuantidade(Perecivel[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            int maxIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (array[j].getEstoque() > array[maxIdx].getEstoque()) {
+                    maxIdx = j;
+                }
+            }
+            Perecivel temp = array[maxIdx];
+            array[maxIdx] = array[i];
+            array[i] = temp;
+        }
+        return array;
     }
 }

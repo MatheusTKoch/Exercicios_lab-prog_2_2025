@@ -3,10 +3,12 @@ package Pesquisa.atv4;
 
 public class Perecivel extends Produto {
     Data dataValidade;
+    int quantEstoque;
 
-    public Perecivel(String nome, String descricao, double valor, Data dataValidade) {
+    public Perecivel(String nome, String descricao, double valor, Data dataValidade, int quantEstoque) {
         super(nome, descricao, valor);
         this.dataValidade = dataValidade;
+        this.quantEstoque = quantEstoque;
     }
 
     public Data getValidade() {
@@ -15,6 +17,14 @@ public class Perecivel extends Produto {
 
     public void setValidade(Data dataValidade) {
         this.dataValidade = dataValidade;
+    }
+
+    public int getEstoque() {
+        return quantEstoque;
+    }
+
+    public void setEstoque(int quantEstoque) {
+        this.quantEstoque = quantEstoque;
     }
 
     @Override
