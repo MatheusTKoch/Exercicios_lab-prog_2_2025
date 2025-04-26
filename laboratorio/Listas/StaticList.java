@@ -99,4 +99,24 @@ public class StaticList<E> implements List<E> {
 			s += elements[i] + " ";
 		return s;
 	}
+
+	public int contaElementos(E el) throws IllegalArgumentException {
+		if (el == null) {
+			throw new IllegalArgumentException("Elemento não pode ser null");
+		}
+		return contaElementosRecursivo(el, numElements - 1);
+	}
+
+	private int contaElementosRecursivo(E el, int pos) {
+		// Início da lista
+		if (pos < 0) {
+			return 0;
+		}
+		
+		// Verifica se o elemento atual é igual ao procurado
+		int count = el.equals(elements[pos]) ? 1 : 0;
+		
+		// Chamada recursiva para o restante da lista
+		return count + contaElementosRecursivo(el, pos - 1);
+	}
 }
