@@ -1,7 +1,7 @@
 //Exercicios retirados de https://www.w3resource.com/java-exercises/recursive/index.php
 package w3schools;
 
-public class Exercises {
+public class Recursive {
     //Write a Java recursive method to calculate the factorial of a given positive integer.
     public static int fatorialInt(int num) {
         if (num == 0) {
