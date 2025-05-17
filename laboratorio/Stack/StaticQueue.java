@@ -6,6 +6,7 @@ public class StaticQueue<E> implements Queue<E> {
 
 	private E elements[];
 
+	@SuppressWarnings("unchecked")
 	public StaticQueue(int maxSize) {
 		elements = (E[])new Object[maxSize];
 		first = last = -1;

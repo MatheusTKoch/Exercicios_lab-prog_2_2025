@@ -3,6 +3,7 @@ public class StaticStack<E> implements Stack<E> {
 
 	private E elements[];
 
+	@SuppressWarnings("unchecked")
 	public StaticStack(int maxSize) {
 		elements = (E[])new Object[maxSize];
 		top = -1;

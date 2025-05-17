@@ -23,12 +23,11 @@ package Bancaria;
 import java.util.Scanner;
 
 public class Principal {
-    public static void main(String[] args){
-        Scanner s = new Scanner(System.in);
-		Rentavel contaRentavel = new ContaPoupanca("123456");
+	public static void main(String[] args){
 		int quantContas = 0;
 		
-		while(quantContas <= 0){
+		try (Scanner s = new Scanner(System.in)) {
+			while(quantContas <= 0){
 			System.out.println("Quantas contas serão criadas?");
 			quantContas = Integer.parseInt(s.nextLine());
 		}
@@ -69,5 +68,6 @@ public class Principal {
 			
 		for(Rentavel r: rentaveis)
 			System.out.println("Rendimento: R$" + r.calculaRendimento());
-    }
+		}
+	}
 }

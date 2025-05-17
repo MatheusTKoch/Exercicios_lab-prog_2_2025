@@ -11,9 +11,10 @@ public class Principal {
 
    public static int pesquisaSequencialOrdenada(int[] tab, int arg) {
         for (int i = 0; (i < tab.length) && (tab[i] <= arg); i++) {
-            if (tab[i] == arg)
+            if (tab[i] == arg) {
                 System.out.println(i); 
                 return i;
+            }
         }
         return -1;
    }

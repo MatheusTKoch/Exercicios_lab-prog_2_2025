@@ -1,5 +1,4 @@
 package Exercicios;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -65,5 +64,6 @@ public class ExerciciosArrays {
             System.out.println("Digite o tamanho da matriz: ");
             int tamMatriz = scan.nextInt();
             retornaMatriz(tamMatriz);
+            scan.close();
     }
 }

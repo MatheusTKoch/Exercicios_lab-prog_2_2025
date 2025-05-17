@@ -19,7 +19,15 @@ public class Exercicio {
     }
 
     // Exercício 2: Implemente, em uma classe qualquer, um método recursivo que soma todos os elementos contidos em uma lista simplesmente encadeada de inteiros recebida por parâmetro.
-    
+    public static int sumSinglyList(SinglyLinkedList<Integer> list) throws IllegalArgumentException {
+        if(list == null) throw new IllegalArgumentException();
+        return sumSinglyList(list, 0, 0);
+    }
+
+    private static int sumSinglyList(SinglyLinkedList<Integer> list, int res, int posicao) {
+        
+        return sumSinglyList(list, res + 1, posicao);
+    }
     public static void main(String[] args) {
         
     }

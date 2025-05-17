@@ -37,12 +37,15 @@ public class Excecoes {
     }
 
     public static void main(String[] args) throws IllegalArgumentException {
-        try {
-            Scanner scan = new Scanner(System.in);
+        try (Scanner scan = new Scanner(System.in)) {
+            Excecoes temp = new Excecoes(0);
             System.out.println("Digite o valor a ser somado: ");
             double tempMais = scan.nextDouble();
+            temp.aumentaTemperatura(tempMais);
             System.out.println("Digite o valor a ser subtraído: ");
             double tempMenos = scan.nextDouble();
+            temp.diminuiTemperatura(tempMenos);
+            System.out.println("Temperatura final: " + temp.getTemperatura());
         } catch (IllegalArgumentException e) {
             System.out.println("Valor inválido: " + e.getMessage());
         } finally {

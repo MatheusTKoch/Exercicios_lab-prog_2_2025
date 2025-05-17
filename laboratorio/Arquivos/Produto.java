@@ -37,15 +37,4 @@ public abstract class Produto {
         return preco;
     }
 
-    private void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    private void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    private void setPreco(double preco) {
-        this.preco = preco;
-    }
 }

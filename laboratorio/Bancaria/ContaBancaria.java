@@ -50,12 +50,13 @@ public abstract class ContaBancaria {
     public abstract void tiraExtrato();
 
     public boolean alteraSenha(String senha){
-		Scanner s = new Scanner(System.in);
-		System.out.println("Digite a senha anterior:");
-		if(s.nextLine().equals(this.senha)){
-			setSenha(s.nextLine());
-			return true;
-		}
-		return false;
-	}
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.println("Digite a senha anterior:");
+            if(s.nextLine().equals(this.senha)){
+                setSenha(s.nextLine());
+                return true;
+            }
+            return false;
+        }
+    }
 }
