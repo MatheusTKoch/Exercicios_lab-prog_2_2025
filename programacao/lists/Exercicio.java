@@ -25,8 +25,10 @@ public class Exercicio {
     }
 
     private static int sumSinglyList(SinglyLinkedList<Integer> list, int res, int posicao) {
-        
-        return sumSinglyList(list, res + 1, posicao);
+        if (posicao >= list.numElements()) {
+            return res;
+        }
+        return sumSinglyList(list, res + list.get(posicao), posicao + 1);
     }
     public static void main(String[] args) {
         
