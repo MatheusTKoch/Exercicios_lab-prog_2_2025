@@ -2,6 +2,7 @@
 package w3schools;
 
 public class Stack {
+//Write a Java program to implement a stack with push and pop operations. Find the top element of the stack and check if it is empty or not.
   private int[] arr;
   private int top;
 
@@ -55,23 +56,8 @@ public class Stack {
     }
   }
 
+//Write a Java program to sort the elements of a given stack in ascending order.
   public static void main(String[] args) {
-    System.out.println("Inicializando a stack:");
-    Stack stack = new Stack(5);
-    System.out.println("A stack esta vazia? " + stack.isEmpty());
-    System.out.println("\n Adicionado elementos ao stack:");
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.push(4);
-    stack.push(5);
-    stack.display();
-    System.out.println("\n Primeiro elemento da stack: " + stack.peek());
-    System.out.println("\n Remover dois elementos da stack:");
-    stack.pop();
-    stack.pop();
-    stack.display();
-    System.out.println("\n Adicionando elementos ao inicio da stack apos remover: " + stack.peek());
-    System.out.println("\n A stack esta vazia? " + stack.isEmpty());
+    
   }
 }
