@@ -44,6 +44,14 @@ public class Recursive {
         return checarPalindrome(str.substring(1, str.length() - 1));
     }
 
+    //Write a Java recursive method to count the number of occurrences of a specific element in an array.
+    public static int numOcurrences(String[] arr, String target, int pos) {
+        if (pos >= arr.length) {
+            return 0;
+        }
+        return (arr[pos].equals(target) ? 1 : 0) + numOcurrences(arr, target, pos + 1);
+    }
+
     public static void main(String[] args) {
         
     }
