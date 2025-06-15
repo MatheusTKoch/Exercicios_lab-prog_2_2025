@@ -28,8 +28,23 @@ public class Recursive {
         
         return 1 + tamString(str.substring(1));
     }
+
+    //Write a Java recursive method to check if a given string is a palindrome.
+    public static boolean checarPalindrome(String str) {
+        str = str.toLowerCase().replaceAll("\\s+", "");
+        
+        if (str.length() <= 1) {
+            return true;
+        }
+        
+        if (str.charAt(0) != str.charAt(str.length() - 1)) {
+            return false;
+        }
+        
+        return checarPalindrome(str.substring(1, str.length() - 1));
+    }
+
     public static void main(String[] args) {
-        int tamStr = tamString("teste");
-        System.out.println(tamStr);
+        
     }
 }
