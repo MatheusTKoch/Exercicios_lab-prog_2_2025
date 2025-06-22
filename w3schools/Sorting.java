@@ -3,7 +3,6 @@ package w3schools;
 
 public class Sorting {
     //Write a Java program to sort an array of given integers using the Quick sort algorithm.
-    //Quick sort is a comparison sort, meaning it can sort items of any type for which a "less-than" relation (formally, a total order) is defined.
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
             int pi = partition(arr, low, high);
@@ -29,9 +28,25 @@ public class Sorting {
         return i + 1;
     }
 
+    //Write a Java program to sort an array of given integers using the Bubble Sorting Algorithm.
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
-        quickSort(arr, 0, arr.length - 1);
+        
+        bubbleSort(arr);
+        
         System.out.println("Sorted array: ");
         for (int value : arr) {
             System.out.print(value + " ");
