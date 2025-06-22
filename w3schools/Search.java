@@ -3,7 +3,6 @@ package w3schools;
 
 public class Search {
     //Write a Java program to find a specified element in a given array of elements using Binary Search.
-    
     public static int binarySearch(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
@@ -22,16 +21,26 @@ public class Search {
         }
         return -1;
     }
+
+    //Write a Java program to find a specified element in a given array of elements using Linear Search.
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target)
+                return i;
+        }
+        return -1;
+    }
     
     public static void main(String[] args) {
         int[] arr = {2, 4, 6, 8, 10, 12, 14, 16};
         int target = 10;
         
-        int result = binarySearch(arr, target);
+        int result = linearSearch(arr, target);
         if (result != -1) {
             System.out.println("Element found at index: " + result);
         } else {
             System.out.println("Element not found");
         }
+
     }
 }
