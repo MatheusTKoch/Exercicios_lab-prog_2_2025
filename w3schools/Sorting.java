@@ -42,11 +42,29 @@ public class Sorting {
             }
         }
     }
+
+    //Write a Java program to sort an array of given integers using the Selection Sort Algorithm.
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            int temp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         
-        bubbleSort(arr);
-        
+        selectionSort(arr);
+
         System.out.println("Sorted array: ");
         for (int value : arr) {
             System.out.print(value + " ");
